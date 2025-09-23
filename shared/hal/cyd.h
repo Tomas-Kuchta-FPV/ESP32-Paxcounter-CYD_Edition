@@ -9,6 +9,8 @@
 
 // Hardware related definitions for CYD boards
 
+#define VERBOSE 1       // set to 0 to silence the device, 1 enables additional debug output
+
 // Display Settings
 #define HAS_DISPLAY 2   // TFT-LCD
 // uncomment one of the following to select the CYD type
@@ -42,6 +44,19 @@
 #define TFT_TYPE DISPLAY_CYD
 #endif
 
+
+// enable only if you want to store a local paxcount table on the device
+#define HAS_SDCARD  1      // this board has an SD-card-reader/writer
+// Pins for SD-card
+#define SDCARD_CS    (5)
+#define SDCARD_MOSI  (23)
+#define SDCARD_MISO  (19)
+#define SDCARD_SCLK  (18)
+
+// Doesnt work
+// I (16) src/sdcard.cpp: looking for SD-card...
+// E (16) spi: spi_bus_initialize(756): SPI bus already initialized.
+// E (17) src/sdcard.cpp: failed to initialize SPI bus
 
 #define DISABLE_BROWNOUT 1 // comment out if you want to keep brownout feature
 
